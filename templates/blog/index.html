@@ -1,0 +1,18 @@
+<section class="blog">
+
+	<header>
+		<h1>{{ title }}</h1>
+		<h2>{{ content }}</h2>
+	</header>
+
+	<article class="blog__feed">
+		{{ collection:blog paginate="true" as="posts" limit="4" }}
+			{{ posts scope="tag" }}
+				{{ partial:article-excerpt }}
+			{{ /posts }}
+
+			{{ partial:pagination }}
+		{{ /collection:blog }}
+	</article>
+
+</section>
