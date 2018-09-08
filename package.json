@@ -14,7 +14,7 @@
   "homepage": "https://sambar.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thefreshvince/Sambar.git"
+    "url": "git@github.com:thefreshvince/Sambar.git"
   },
   "dependencies": {
     "axios": "^0.18.0",
