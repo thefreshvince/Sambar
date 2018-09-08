@@ -1,0 +1,17 @@
+<section class="profile">
+
+    {{ user:profile username="{username}" }}
+
+        <header>
+            <h1>{{ name or username }}</h1>
+            <h2>{{ email }}</h2>
+            <img 
+                src="{{ email | gravatar:200 }}" 
+                alt="{{ name }}" 
+                class="profile__portrait"
+            />
+        </header>
+
+    {{ /user:profile }}
+
+</section>

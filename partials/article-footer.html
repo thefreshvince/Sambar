@@ -1,0 +1,10 @@
+{{ collection:next in="blog" limit="2" as="next_posts" }}
+	{{ unless no_results }}
+		<footer class="article__footer">
+			<h6>Next Up <em>on the</em> Blog</h6>
+			{{ next_posts scope="tag" }}
+				{{ partial:article-excerpt }}
+			{{ /next_posts }}
+		</footer>
+	{{ /unless }}
+{{ /collection:next }}

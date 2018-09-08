@@ -1,0 +1,27 @@
+<nav class="nav-user">
+    <ul class="nav-user__items">
+        {{ if logged_in }}
+            <li class="nav-user__item">
+                <a  class="nav-user__link"
+                    href="{{ link to='users' }}"
+                >Users</a>
+            </li>
+            <li class="nav-user__item">
+                <a  class="nav-user__link"
+                    href="{{ user:logout_url }}"
+                >Log out</a>
+            </li>
+        {{ else }}
+            <li class="nav-user__item">
+                <a  class="nav-user__link"
+                    href="{{ link to='login' }}"
+                >Log in</a>
+            </li>
+            <li class="nav-user__item">
+                <a  class="nav-user__link"
+                    href="{{ link to='register' }}"
+                >Register</a>
+            </li>
+        {{ /if }}
+    </ul>
+</nav>
