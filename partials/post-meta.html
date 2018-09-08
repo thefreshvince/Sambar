@@ -1,0 +1,21 @@
+<div class="meta">
+	<div class="meta__author">
+		<img 
+			src="https://s3.amazonaws.com/uifaces/faces/twitter/rssems/48.jpg" 
+			class="img-circle" 
+			width="48" 
+			height="48"
+		/>
+		<div class="meta__details">
+			<a  href="" 
+				class="meta__author-name"
+			>{{ author_name }}</a>
+			<span class="meta__read-time">
+				{{ content | read_time }} minute read
+			</span>
+		</div>
+	</div>
+	<div class="meta__date">
+		{{ date format="F j, Y" }}
+	</div>
+</div>
