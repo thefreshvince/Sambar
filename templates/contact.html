@@ -1,10 +1,10 @@
-<section class="contact">
+<section class="page-contact">
 
     <header>
         <h1>Contact</h1>
     </header>
 
-    <article class="contact__content">
+    <article class="page-contact__content">
 
         {{ content }}
 
@@ -31,7 +31,7 @@
                     name: 'name',
                     value: '{{ old:name }}'
                 }"
-                class="contact__field"
+                class="page-contact__field"
             />
 
             <Field
@@ -41,7 +41,7 @@
                     name: 'email',
                     value: '{{ old:email }}'
                 }"
-                class="contact__field"
+                class="page-contact__field"
             />
 
             <Field
@@ -51,11 +51,11 @@
                     name: 'comment',
                     value: '{{ old:comment }}'
                 }"
-                class="contact__field"
+                class="page-contact__field"
             />
 
             <button 
-                class="contact__send"
+                class="page-contact__send"
             >Send</button>
 
         {{ /form:create }}

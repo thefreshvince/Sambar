@@ -1,15 +1,15 @@
-<section class="search">
+<section class="page-search">
 	<header>
 		<h6>Search Results</h6>
 		{{ partial:search }}
 	</header>
-	<article class="search__results">
+	<article class="page-search__results">
 		{{ search:results }}
 
 			{{ if no_results }}
 				No results.
 			{{ else }}
-				<div class="search__result">
+				<div class="page-search__result">
 					<a href="{{ url }}">
 	
 						{{ if intro_image or hero_image }}
