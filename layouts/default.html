@@ -11,15 +11,30 @@
         <meta name="description" content="Sambar starter theme">
         <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
         <link rel="stylesheet" href="{{ theme:css }}" />
+
+        {{ partial:css-critical }}
+
     </head>
 
     <body class="body body--{{ segment_1 or "home" }}">
 
-        {{ partial:header }}
+        <div id="app">
 
-        {{ template_content }}
+            {{ partial:header }}
 
-        {{ partial:footer }}
+            {{ partial:loading }}
+
+            <transition name="fade" mode="out-in"
+            v-on:before-enter="loading = false"
+            v-on:before-leave="loading = true">
+                <router-view>
+                    {{ template_content }}
+                </router-view>
+            </transition>
+
+            {{ partial:footer }}
+
+        </div>
 
         <script src="{{ theme:js }}"></script>
 
