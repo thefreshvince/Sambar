@@ -7,7 +7,7 @@ window.sambar = {
     config: {
 
         // Sets the duration of the loading/page transition
-        loading_transition_duration: 2000
+        loading_transition_duration: 500
 
     }
 
