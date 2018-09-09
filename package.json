@@ -5,6 +5,7 @@
   "scripts": {
     "build": "./node_modules/.bin/webpack",
     "watch": "./node_modules/.bin/webpack -w",
+    "dev": "npm run watch",
     "test": "jest -o --watch --no-cache"
   },
   "author": {
@@ -27,11 +28,11 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.2",
+    "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^1.0.0",
-    "extract-text-webpack-plugin": "^3.0.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "imagemin-webpack-plugin": "^2.2.0",
     "jest": "^23.5.0",
@@ -46,7 +47,8 @@
     "vue-jest": "^2.6.0",
     "vue-loader": "^15.4.1",
     "vue-template-compiler": "^2.5.17",
-    "webpack": "^4.17.2"
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   },
   "private": true
 }
