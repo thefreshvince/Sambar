@@ -1,7 +1,7 @@
 // Required includes
 const theme_name = 'sambar',
     path = require('path'),
-    vue_components_path = /source\/scripts\/vue_components\/.*/,
+    vue_components_path = /source\/scripts\/components\/.*/,
 	output_path = path.resolve(__dirname, 'js/'),
     ImageminPlugin = require('imagemin-webpack-plugin').default,
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
