@@ -25,8 +25,8 @@
             {{ partial:loading }}
 
             <transition name="fade" mode="out-in"
-            v-on:before-enter="loading = false"
-            v-on:before-leave="loading = true">
+            v-on:before-enter="afterRender"
+            v-on:before-leave="beforeRender">
                 <router-view>
                     {{ template_content }}
                 </router-view>
