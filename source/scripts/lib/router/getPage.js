@@ -10,7 +10,7 @@ export default url => fetch(url)
 
     // The head element
     let head = text.match(/<head>([\s\S]*)<\/head>/i)[1],
-        content = text.match(/<router-view>([\s\S]*)<\/router-view>/i)[1];
+        content = text.match(/<router-view[^>]*>([\s\S]*)<\/router-view>/i)[1];
     
     // Return the component data
     return Promise.resolve({
