@@ -10,7 +10,7 @@ const routes = [{
     path: location.pathname, 
     meta: generateMeta(document.querySelector('head').innerHTML),
     component: {
-        template: '<div>' + document.querySelector('router-view').innerHTML + '</div>'
+        template: document.querySelector('router-view')
     }
 }];
 
@@ -28,7 +28,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
 
     // Pre-emptively trigger the loading state
-    if(window.sambar.vue) window.sambar.vue.loading = true;
+    if(window.sambar.vue) 
+        window.sambar.vue.$store.dispatch('loading/startLoading');
 
     // Update the route and continue on
     updateRoute(to, routes).then(path => next(path));
