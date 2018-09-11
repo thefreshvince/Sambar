@@ -1,5 +1,5 @@
 <div class="article-excerpt">
-	<a href="{{ url }}">
+	<router-link to="{{ url }}">
 
 		{{ if tag:long_form }}
 			{{ tag:long_form where="type:image" limit="1" }}
@@ -46,5 +46,5 @@
 			{{ /if }}
 		</div>
 		
-	</a>
+	</router-link>
 </div>

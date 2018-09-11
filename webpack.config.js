@@ -1,7 +1,7 @@
 // Required includes
 const theme_name = 'sambar',
     path = require('path'),
-    vue_components_path = /source\/scripts\/vue_components\/.*/,
+    vue_components_path = /source\/scripts\/components\/.*/,
 	output_path = path.resolve(__dirname, 'js/'),
     ImageminPlugin = require('imagemin-webpack-plugin').default,
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
@@ -13,7 +13,9 @@ const theme_name = 'sambar',
 module.exports = {
 
 	// What's going in
-	entry: 'source/scripts/entry.js',
+	entry: path.resolve(__dirname, 'source/scripts/entry.js'),
+
+	mode: 'development',
 
 	// What's happening to it
 	module: {
@@ -111,6 +113,14 @@ module.exports = {
 		publicPath: 'js/',
 		chunkFilename: '[name].bundle.js',
 		filename: `${theme_name}.js`
+	},
+
+	// Set up aliases
+	resolve: {
+		alias: {
+			vue: 'vue/dist/vue.js',
+			'@': path.resolve(__dirname, 'source')
+		}
 	},
 
 	// Plugins that will help us add functionality to webpack
