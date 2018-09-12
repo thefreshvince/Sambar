@@ -48,7 +48,17 @@ export default {
    * Watch for changes on props
    * @type {Object}
    */
-  watch: { },
+  watch: {
+
+    /**
+     * Triggers when the route changes in the collection
+     * @param {Object} route The new route
+     */
+    '$route' (route) {
+      this.loadRoute(route.fullPath);
+    }
+
+  },
 
   /**
    * Methods attached to the component
@@ -63,47 +73,59 @@ export default {
     takeOverPagination () {
 
       // Store the pagination links
-      let pagination_links = this.$el.querySelectorAll('.pagination a'),
-          self = this;
+      let pagination_links = this.$el.querySelectorAll('.pagination a');
 
       // Loop through the pagination links
-      for (let i = 0; i < pagination_links.length; i++) {
-
-        // Add a click callback if we haven't already
+      // And dd a click callback if we haven't already
+      for (let i = 0; i < pagination_links.length; i++)
         !pagination_links[i].pagination_active
         && (pagination_links[i].pagination_active = true)
-        && pagination_links[i].addEventListener('click', function (e) {
+        && pagination_links[i].addEventListener(
+          'click', 
+          e => this.pushRoute(e, pagination_links[i])
+        );
 
-            // Stop inherit behaviour
-            e.preventDefault();
+    },
 
-            // Get the herf and the content that we need
-            let path = this.getAttribute('href').match(/(?:\/[^\/]*){2}(.+)/)[1];
+    /**
+     * Pushes the route from the link to vue router
+     * @param {Event}       e  The event object
+     * @param {HTMLElement} el The element triggering the callback
+     */
+    pushRoute (e, el) {
 
-            // Push the path to the router
-            self.$router.push( path, e => {
+      // Stop inherit behaviour
+      e.preventDefault();
 
-                // Get the page contents and store it
-                getPage(path).then(collection => {
+      // Get the herf and the content that we need
+      let path = el.getAttribute('href').match(/(?:\/[^\/]*){2}(.+)/)[1];
 
-                  // Update the contents on the collection
-                  self.contents = collection.template
-                    .match(/<Collection[^>]*>([\s\S]*)<\/Collection>/i)[1];
+      // Push the path to the router
+      this.$router.push(path);
 
-                  // Trigger the finish loading state on the store
-                  self.$store.dispatch('loading/finishLoading');
+    },
 
-                  // Run the click logic on the incoming pagination links
-                  self.$nextTick(() => self.takeOverPagination());
+    /**
+     * Loads the route from vue router
+     * @param  {String}  path 
+     * @return {Promise}
+     */
+    loadRoute (path) {
+      
+      // Get the page contents and store it
+      return getPage(path).then(collection => {
 
-                });
+        // Update the contents on the collection
+        this.contents = collection.template
+          .match(/<Collection[^>]*>([\s\S]*)<\/Collection>/i)[1];
 
-              }
-            );
+        // Trigger the finish loading state on the store
+        this.$store.dispatch('loading/finishLoading');
 
-        });
-        
-      }
+        // Run the click logic on the incoming pagination links
+        this.$nextTick(() => this.takeOverPagination());
+
+      });
 
     }
 
