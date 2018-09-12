@@ -1,4 +1,9 @@
 /**
+ * Import plugins
+ */
+import 'lazysizes';
+
+/**
  * General config and setup
  */
 import './config';
