@@ -28,11 +28,10 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
 
     // Pre-emptively trigger the loading state
-    if(window.sambar.vue) 
-        window.sambar.vue.$store.dispatch('loading/startLoading');
+    if(window.sambar.vue) window.sambar.vue.$store.dispatch('loading/startLoading');
 
     // Update the route and continue on
-    updateRoute(to, routes).then(path => next(path));
+    updateRoute(to, from, routes).then(path => next(path));
 
 })
 
