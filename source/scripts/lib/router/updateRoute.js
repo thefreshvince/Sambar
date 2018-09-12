@@ -4,7 +4,7 @@ import getPage from '@/scripts/lib/router/getPage';
  * Gaurd to run when resolving a new route
  * @return  {Promise}
  */
-export default (to, from, routes) => new Promise(resolve => {
+export default (to, routes) => new Promise(resolve => {
 
     // Set a timeout for the loading element
     setTimeout(() => {

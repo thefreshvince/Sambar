@@ -31,7 +31,7 @@ router.beforeEach((to, from, next) => {
     if(window.sambar.vue) window.sambar.vue.$store.dispatch('loading/startLoading');
 
     // Update the route and continue on
-    updateRoute(to, from, routes).then(path => next(path));
+    updateRoute(to, routes).then(path => next(path));
 
 })
 
