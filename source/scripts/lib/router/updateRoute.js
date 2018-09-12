@@ -18,7 +18,10 @@ export default (to, routes) => new Promise(resolve => {
                 // Store the new route as a component
                 let new_route = {
                     path: to.path, 
-                    meta: contents.meta,
+                    meta: {
+                        initial_path: to.fullPath,
+                        ...contents.meta
+                    },
                     query: to.query,
                     component: {
                         template: contents.template

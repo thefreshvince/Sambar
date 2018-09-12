@@ -8,7 +8,10 @@ import VueRouter from 'vue-router';
  */
 const routes = [{ 
     path: location.pathname, 
-    meta: generateMeta(document.querySelector('head').innerHTML),
+    meta: {
+        initial_path: location.pathname + location.search,
+        ...generateMeta(document.querySelector('head').innerHTML)
+    },
     component: {
         template: document.querySelector('router-view')
     }

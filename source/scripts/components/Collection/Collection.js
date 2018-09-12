@@ -36,7 +36,21 @@ export default {
    * Triggers when mounted
    * @return {Null}
    */
-  mounted () { },
+  mounted () {
+
+    // If we're not on the correct page,
+    // make sure we load that page
+    if (this.$route.meta.initial_path != this.$route.fullPath) {
+
+      // Make sure that the loading is still on
+      this.$store.dispatch('loading/startLoading');      
+
+      // now load the path into the component
+      this.loadRoute(this.$route.fullPath);
+
+    }    
+
+  },
 
   /**
    * Watch for changes on props
@@ -50,8 +64,27 @@ export default {
      */
     '$route' (route) {
 
+      // Load the route
+      this.loadRoute (route.fullPath); 
+      
+    }
+
+  },
+
+  /**
+   * Methods attached to the component
+   * @type {Object}
+   */
+  methods: {
+
+    /**
+     * Loads a route
+     * @param {String} path 
+     */
+    loadRoute (path) {
+      
       // Get the page contents and store it
-      getPage(route.fullPath).then(collection => {
+      getPage(path).then(collection => {
 
         // Update the contents on the collection
         this.contents = collection.template
@@ -64,16 +97,10 @@ export default {
         this.$nextTick(() => window.sambar.behaviours.mount());
 
       });
-      
+
     }
 
   },
-
-  /**
-   * Methods attached to the component
-   * @type {Object}
-   */
-  methods: { },
 
   /**
    * Holds computed props
