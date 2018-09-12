@@ -9,3 +9,4 @@ import './vue';
 /**
  * Statamic setups
  */
+import './siteLinks';
