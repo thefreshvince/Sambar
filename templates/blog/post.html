@@ -33,7 +33,7 @@
 			/></p>
 		{{ /if }}
 
-		{{ content }}
+		{{ content | srcsets:150,480,768,960,1080,1440 | lazysizes }}
 
 		<ul class="post__tags">
 			{{ tags }}
