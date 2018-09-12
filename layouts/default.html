@@ -28,7 +28,7 @@
             v-on:before-enter="afterRender"
             v-on:before-leave="beforeRender">
                 <router-view>
-                    {{ template_content }}
+                    <div>{{ template_content }}</div>
                 </router-view>
             </transition>
 
