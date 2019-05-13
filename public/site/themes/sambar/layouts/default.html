@@ -11,11 +11,11 @@
         {{ seo_pro:meta }}
 
         {{# Load the main styles #}}
-        <script>(function() {var d = document, s = d.createElement("link");s.setAttribute("href", "{{ theme:css src='../assets/css' cache_bust='true' }}");s.setAttribute("rel", "stylesheet");s.setAttribute("defer", "defer");d.head.appendChild(s);})();</script>
-        <noscript><link rel="stylesheet" href="{{ theme:css src='../assets/css' cache_bust='true' }}" /></noscript>
+        <script>(function() {var d = document, s = d.createElement("link");s.setAttribute("href", "{{ theme:css src='../assets/css/main' cache_bust='true' }}");s.setAttribute("rel", "stylesheet");s.setAttribute("defer", "defer");d.head.appendChild(s);})();</script>
+        <noscript><link rel="stylesheet" href="{{ theme:css src='../assets/css/main' cache_bust='true' }}" /></noscript>
         
         {{# Tracks a cache busting string for use with ajax urls #}}
-        <script>var cache_bust = '{{ theme:js src="../assets/js" cache_bust="true" }}'.split('?v=')[1];</script>
+        <script>var cache_bust = '{{ theme:js src="../assets/js/main" cache_bust="true" }}'.split('?v=')[1];</script>
 
         {{ partial:font }}
 
@@ -26,7 +26,7 @@
         {{ partial:css.critical }}
 
         <script src="{{ theme:js src='../assets/js/vendors~main.bundle.js' cache_bust='true' }}" defer></script>
-        <script src="{{ theme:js src='../assets/js' cache_bust='true' }}" defer></script>
+        <script src="{{ theme:js src='../assets/js/main' cache_bust='true' }}" defer></script>
 
     </head>
 

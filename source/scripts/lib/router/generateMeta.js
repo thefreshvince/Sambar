@@ -5,7 +5,7 @@
 export default head => {
     
     // Get our tags
-    let title = head.match(/<title>([\s\S]*?)<\/title>/i)[1];
+    let title = (head.match(/<title>([\s\S]*?)<\/title>/i)||['',''])[1];
 
     // return our meta object
     return {
