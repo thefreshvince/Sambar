@@ -15,10 +15,12 @@ $font-size-small: $font-size-normal * 0.9;
 $font-line-height-normal: 1.3em;
 $font-line-height-small: 1.17em;
 $font-line-height-large: 1.8em;
-$font-letter-spacing-body: 0.01em;
-$font-letter-spacing-small: $font-letter-spacing-body;
+$font-letter-spacing-normal: 0.01em;
+$font-letter-spacing-small: $font-letter-spacing-normal;
 $font-letter-spacing-large: 0.107em;
+$font-letter-spacing-body: $font-letter-spacing-normal;
 $font-size-body: $font-size-normal;
+$font-size-body-small: $font-size-small;
 
 /*
   Font Weights

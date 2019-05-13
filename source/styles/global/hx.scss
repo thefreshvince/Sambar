@@ -10,14 +10,14 @@
 
         &1{
             font-weight: $font-weight-bold;
-            line-height: $font-line-height-small;
+            line-height: $font-line-height-normal;
             font-size: 58px;
             font-size-responsive: 36px 58px $font-size-vp-min $font-size-vp-max;
         }
 
         &2{
             font-weight: $font-weight-bold-semi;
-            line-height: $font-line-height-short;
+            line-height: $font-line-height-normal;
             font-size: 38px;
             font-size-responsive: 18px 38px $font-size-vp-min $font-size-vp-max;
         }
@@ -31,14 +31,14 @@
 
         &4{
             font-weight: $font-weight-thin;
-            line-height: $font-line-height-large;
+            line-height: $font-line-height-normal;
             font-size: 18px;
             font-size-responsive: 16px 23px $font-size-vp-min $font-size-vp-max;
         }
         
         &5, &6{
             font-weight: $font-weight-bold;
-            line-height: $font-line-height-massive;
+            line-height: $font-line-height-normal;
             font-size: 14px;
         }
     }
