@@ -34,6 +34,9 @@ export default (to, from, routes) => new Promise(resolve => {
             // Add the new route to the routes array
             // For checking later
             routes.push(new_route);
+            
+            // Now try navigating to it again
+            resolve(to.fullPath);
 
         });
 
