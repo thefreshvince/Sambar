@@ -1,0 +1,72 @@
+/*
+    Grid sizes
+ */
+$grid-mini: 320px;
+$grid-small: 450px;
+$grid-medium: 768px;
+$grid-medium-large: 990px;
+$grid-large: 1100px;
+$grid-container: $container-width-medium;
+$grid-widescreen: 1440px;
+$grid-monster: $container-width-large;
+
+/*
+    Breakpoint identifiers
+ */
+$mini-up: 'mini-up';
+$mini-down: 'mini-down';
+$mini: 'mini';
+$small-up: 'small-up';
+$small-down: 'small-down';
+$small: 'small';
+$medium: 'medium';
+$medium-down: 'medium-down';
+$medium-up: 'medium-up';
+$medium-wall-alpha: 'medium-wall-alpha';
+$large: 'large';
+$large-down: 'large-down';
+$large-up: 'large-up';
+$medium-large: 'medium-large';
+$medium-large-down: 'medium-large-down';
+$medium-large-up: 'medium-large-up';
+$container: 'container';
+$container-down: 'container-down';
+$container-up: 'container-up';
+$widescreen: 'widescreen';
+$widescreen-down: 'widescreen-down';
+$widescreen-up: 'widescreen-up';
+$monster: 'monster';
+$holy-shit: 'holy-shit';
+
+$navbreak-up: $small-up;
+$eleven-up: '(min-width: 1100px)';
+
+/*
+    A breakpoints map to use with media queries
+ */
+$breakpoints: (
+    $mini '(min-width: #{$grid-mini}) and (max-width: #{$grid-small - 1})',
+    $mini-up '(min-width: #{$grid-mini})',
+    $mini-down '(max-width: #{$grid-small - 1})',
+    $small '(min-width: #{$grid-small}) and (max-width: #{$grid-medium - 1})',
+    $small-up '(min-width: #{$grid-small})',
+    $small-down '(max-width: #{$grid-medium - 1})',
+    $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-medium-large - 1})',
+    $medium-down '(max-width: #{$grid-medium-large - 1})',
+    $medium-up '(min-width: #{$grid-medium})',
+    $medium-wall-alpha '(min-width: #{$grid-medium}) and (min-height: 850px)',
+    $medium-large '(min-width: #{$grid-medium-large}) and (max-width: #{$grid-large - 1})',
+    $medium-large-up '(min-width: #{$grid-medium-large})',
+    $medium-large-down '(max-width: #{$grid-large - 1})',
+    $large '(min-width: #{$grid-large}) and (max-width: #{$grid-container - 1})',
+    $large-up '(min-width: #{$grid-large})',
+    $large-down '(max-width: #{$grid-container - 1})',
+    $container '(min-width: #{$grid-container}) and (max-width: #{$grid-widescreen - 1})',
+    $container-up '(min-width: #{$grid-container})',
+    $container-down '(max-width: #{$grid-widescreen - 1})',
+    $widescreen '(min-width: #{$grid-widescreen})',
+    $widescreen-up '(min-width: #{$grid-widescreen})',
+    $widescreen-down '(max-width: #{$grid-monster - 1})',
+    $monster '(min-width: #{$grid-monster})',
+    $holy-shit '(min-width: #{$container-width-xlarge})'
+);

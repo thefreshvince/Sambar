@@ -1,0 +1,29 @@
+.container{
+    box-sizing: border-box;
+    max-width: $container-width-medium;
+    margin: 0 auto;
+    width: 100%;
+
+    &--{
+
+        &padded{
+            padding: 0 $gutter-sides-mobile;
+
+            @include mq ($medium-up) {
+                padding: 0 $gutter-sides;
+            }
+        }
+
+        &large{
+            max-width: $container-width-large;
+        }
+
+        &small{
+            max-width: $container-width-small;
+        }
+
+        &x-small{
+            max-width: $container-width-xsmall;
+        }
+    }
+}

@@ -20,20 +20,37 @@ window.sambar.vue = new Vue({
      * Root data
      * @return  {Object}
      */
-    data: () => ({}),
+    data: () => ({
+
+        // Quick triggers to track the loading state beginning/end
+        loading_started: true,
+        loading_ended: false
+
+    }),
 
     /**
-     * Triggers when the root vue component renders
-     * @return  {Null}
+     * Watch for changes on porperties
      */
-    mounted () {
+    watch: {
 
-        // Make sure that everythin has loaded before
-        // removing the loading state
-        setTimeout(
-            () => this.$store.dispatch('loading/finishLoading'),
-            500
-        );
+        /**
+         * Watches the loading state
+         * @return  {Null}
+         */
+        is_loading (is_loading) {
+
+            // Figure out what prop to trigger
+            let lst = is_loading 
+                ? 'loading_started' 
+                : 'loading_ended';
+
+            // Enable it for component manipulation
+            this.$set(this, lst, true);
+
+            // Unset it on next frame
+            setTimeout(() => this.$set(this, lst, false), 300);
+            
+        }
 
     },
 
@@ -65,6 +82,14 @@ window.sambar.vue = new Vue({
 
             // Turn the loading off
             this.$store.dispatch('loading/finishLoading');
+
+            // Scroll to top of page
+            if(!window.location.href.match(/#/))
+                document.body.scrollTop = 
+                    document.documentElement.scrollTop = 0;
+
+            // close the mobile navigation
+            window.toggleMobileMenu({close_menu: true});
 
             // Run any router mounting logic
             window.sambar.behaviours.mount();

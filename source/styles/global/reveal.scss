@@ -1,0 +1,38 @@
+.reveal{
+
+    &__{ }
+
+    &--{
+
+        &wrapper{
+            transition: all 0.1s;
+            transform: translateZ(1);
+    
+            &.reveal--revealing{
+                transform: translateZ(0);
+            }
+        }
+
+        &basic{
+            opacity: 0;
+            transform: translateY($gutter-large);
+            transition: opacity $transition-duration-long $transition-duration-fast,
+                transform $transition-duration-long $transition-duration-fast $transition-easing;
+
+            &.reveal--revealing,
+            .reveal--revealing & {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        &staggered{
+            @for $i from 1 through 10 {
+                &:nth-child(#{$i}) {
+                    transition: opacity $transition-duration-long $transition-duration-fast * ($i * 0.75),
+                        transform $transition-duration-long $transition-duration-fast * ($i * 0.75) $transition-easing;
+                }
+            }
+        }
+    }
+}

@@ -10,14 +10,26 @@ class Behaviours {
      */
     constructor () {
 
-        // Initialize the mounting callbacks to
+        // Initialize the destroying callbacks to
         // an empty array that we'll push to
-        this.onMountCallbacks = [];
+        this.onBeforeDestroyCallbacks = [];
 
         // Initialize the destroying callbacks to
         // an empty array that we'll push to
         this.onDestroyCallbacks = [];
 
+        // Initialize the mounting callbacks to
+        // an empty array that we'll push to
+        this.onMountCallbacks = [];
+
+    }
+
+    /**
+     * Adds a function that runs when destroy is called
+     * @param {Function} func 
+     */
+    onBeforeDestroy (func) {
+        this.onBeforeDestroyCallbacks.push(func);
     }
 
     /**
@@ -34,6 +46,13 @@ class Behaviours {
      */
     onMount (func) {
         this.onMountCallbacks.push(func);
+    }
+
+    /**
+     * Before Destroy behaviours
+     */
+    beforeDestroy () {
+        this.runCallbacks('BeforeDestroy');
     }
 
     /**

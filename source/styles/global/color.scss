@@ -1,0 +1,8 @@
+.color{
+    &--{
+        &white{ color: $color-white; }
+        &black{ color: $color-black; }
+        &primary{ color: $color-primary; }
+        &secondary{ color: $color-secondary; }
+    }
+}

@@ -1,0 +1,9 @@
+.background{
+    &--{
+        &white{ background-color: $color-white; }
+        &black{ background-color: $color-black; }
+        &grey{ background-color: $color-grey; }
+        &primary{ background-color: $color-primary; }
+        &secondary{ background-color: $color-secondary; }
+    }
+}

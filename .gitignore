@@ -1,21 +1,31 @@
 # System junk
 .DS_Store
 .vscode
+.notes
 
-# Node junk
+# Build
 node_modules
 npm-debug.log
 
-# built files
-css/*.css
-js/*.js
-images/*.svg
-images/*.jpg
-images/*.jpeg
-images/*.png
-images/*.gif
-fonts/*.woff
-fonts/*.woff2
-fonts/*.eot
-fonts/*.ttf
-fonts/*.otf
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+
+# WP-CLI
+wp-cli.local.yml

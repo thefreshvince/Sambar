@@ -1,0 +1,12 @@
+/*
+    IE Browser Targeting
+    For targeting 10/11
+    throughout the SCSS
+ */
+
+@mixin ie-browser() {
+    @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+        @content;
+    }
+}
+  
