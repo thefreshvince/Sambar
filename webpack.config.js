@@ -3,7 +3,7 @@ const theme_name = 'sambar',
 
     // WP `/app/themes/${theme_name}`,
     // Statamic `/site/themes/${theme_name}`,
-    theme_dir_public = `/app/themes/${theme_name}`,
+    theme_dir_public = `/site/themes/${theme_name}`,
     theme_dir = `public${theme_dir_public}`,
 
     webpack = require("webpack"),
