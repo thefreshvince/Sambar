@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf" content="{{ csrf_token }}">
+        
+        {{ seo_pro:meta }}
+
+        {{# Load the main styles #}}
+        <script>(function() {var d = document, s = d.createElement("link");s.setAttribute("href", "{{ theme:css cache_bust='true' }}");s.setAttribute("rel", "stylesheet");s.setAttribute("defer", "defer");d.head.appendChild(s);})();</script>
+        <noscript><link rel="stylesheet" href="{{ theme:css cache_bust='true' }}" /></noscript>
+        
+        {{# Tracks a cache busting string for use with ajax urls #}}
+        <script>var cache_bust = '{{ theme:js cache_bust="true" }}'.split('?v=')[1];</script>
+
+        {{ partial:font }}
+
+        {{ partial:favicon }}
+
+        {{ partial:script-tag_manager body="false" }}
+
+        {{ partial:css.critical }}
+
+        <script src="{{ theme:js src='vendors~main.bundle.js' cache_bust='true' }}" defer></script>
+        <script src="{{ theme:js cache_bust='true' }}" defer></script>
+
+    </head>
+
+    <body class="body body--{{ segment_1 or 'home' }}">
+
+        {{ partial:script-tag_manager body="true" }}
+
+        <div class="sprite">
+            {{ partial:svg.defs }}
+            {{ partial:sprite.symbol }}
+        </div>
+
+        {{ partial:loading }}
+
+        <div id="app">
+
+            {{ partial:header }}
+
+            <div class="wrapper">
+
+                {{ partial:header-sections sections_persist="true" }}
+
+                <transition name="fade" mode="out-in"
+                    v-on:before-enter="afterRender"
+                    v-on:before-leave="beforeRender"
+                >
+                    <router-view>
+                        <div>{{ template_content }}</div>
+                    </router-view>
+                </transition>
+
+                {{ partial:footer-sections sections_persist="true" }}
+
+            </div>
+
+            {{ partial:footer }}            
+
+        </div>
+
+        {{ partial:credits }}
+
+    </body>
+
+</html>

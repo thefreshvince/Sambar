@@ -1,0 +1,7 @@
+{{ sections }}
+    {{ if !visibility || visibility != 'hide' }}
+        <section class="section section--{{ type }}{{ if orientation }} {{ type replace='_|-' }}--orientation-{{ orientation }}{{ /if }}">
+            {{ partial src="section-{type}" }}
+        </section>
+    {{ /if }}
+{{ /sections }}

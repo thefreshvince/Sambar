@@ -1,0 +1,93 @@
+<style>
+
+    {{# .loading{
+        z-index: 100000;
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        left: 0;    
+        bottom: 0;
+        right: 0;
+        background: #e2c265;
+        font-size: 0;
+        transform: translate(0%,0%);
+    }
+
+    .loading__inner{
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .loading svg {
+        width: 300px;
+        height: 104px;
+    }
+
+    .loading svg path {
+        fill: #fff;
+    }
+
+    .loading__loader{
+        background: #ceac46;
+        margin: 40px auto 0;
+        width: 250px;
+    }
+
+    .loading__loader::before{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        transform-origin: left center;
+        background: white;
+        transition: transform 1.8s ease-out;
+        transform: scaleX(0);
+    }
+
+    .done.loading__loader::before{
+        transform: scaleX(1);
+    }
+
+    .page-transition--out .loading{
+        transition: transform 0.5s ease-out;
+        transform: translateY(-100%);
+    }
+
+    .loading__bar {
+        height: 4px;
+        width: 100%;
+        transform-origin: 0 0;
+        transform: scaleY(0);
+        background-color: #0E151F;
+        transition: transform 0.25s;
+    }
+
+    .loading__bar::before {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100%;
+        transform-origin: 0 0;
+        background-color: #e2c265;
+        transform: scaleX(0);
+    }
+
+    .loading--start .loading__bar {
+        transform: scaleY(1);
+    }
+
+    .loading--start .loading__bar::before {
+        transform: scaleX(0.9);
+        transition: transform 5s 0.15s ease-in-out;
+    }
+
+    .loading--end .loading__bar::before {
+        transform: scaleX(1);
+        transition-duration: 0.5s;
+        transition-delay: 0.05s;
+    } #}}
+
+</style>

@@ -149,8 +149,12 @@ module.exports = env => {
 			new VueLoaderPlugin(),
 			new SVGSpritemapPlugin({
 				prefix: '',
-				src: path.resolve(__dirname, 'source/images/sprite/*.svg'),
-				filename: '../images/sprite.symbol.svg',
+                src: path.resolve(__dirname, 'source/images/sprite/*.svg'),
+                
+                // WP filename: '../images/sprite.symbol.svg',
+                // Statamic filename: '../partials/sprite.symbol.html',
+                filename: '../partials/sprite.symbol.html',
+                
 				generateTitle: false,
 				generateUse: false
 			}),

@@ -1,7 +1,7 @@
 import processPage from '@/scripts/lib/router/processPage';
 
 // Init the worker var for population
-let webworker_url = "/app/themes/socrative/assets/js/webworker-loading.js",
+let webworker_url = "/site/themes/sambar/assets/js/webworker-loading.js",
     w = null,
     webworker_callbacks = [
         {
