@@ -1,5 +1,0 @@
-summary:
-    strip_tags: [img, a, p]
-    safe_truncate: 210
-    ensure_right: ...
-    widont: true

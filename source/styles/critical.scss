@@ -1,0 +1,56 @@
+@import 'options/options';
+
+.loading{
+    z-index: 100000;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;    
+    bottom: 0;
+    right: 0;
+    background: $color-primary;
+    font-size: 0;
+    transform: translate(0%,0%);
+    display: none;
+
+    &__{
+
+        &bar{
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 4px;
+            width: 100%;
+            transform-origin: 0 0;
+            transform: scaleY(0);
+            z-index: 100;
+            background-color: darken($color-tertiary, 20%); // darken($color-primary,25%);
+            transition: transform 0.25s;
+
+            &:before {
+                content: '';
+                display: block;
+                height: 100%;
+                width: 100%;
+                transform-origin: 0 0;
+                background-color: $color-tertiary; // $color-primary;
+                transform: scaleX(0);
+            }
+
+            .loading--start & {
+                transform: scaleY(1);
+            }
+            
+            .loading--start &:before {
+                transform: scaleX(0.9);
+                transition: transform 5s 0.15s ease-in-out;
+            }
+            
+            .loading--end &:before {
+                transform: scaleX(1);
+                transition-duration: 0.5s;
+                transition-delay: 0.05s;
+            }
+        }
+    }
+}

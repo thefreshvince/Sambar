@@ -1,0 +1,12 @@
+body{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $color-body-bg;
+
+    font-family: $font-family-primary;
+    font-size: $font-size-body;
+    color: $color-body;
+    letter-spacing: $font-letter-spacing-body;
+    line-height: $font-line-height-large;
+    font-size-responsive: $font-size-body-small $font-size-body $font-size-vp-min $font-size-vp-max;
+}

@@ -1,0 +1,41 @@
+/*
+  Font families
+ */
+$font-family-primary: 'Montserrat', sans-serif;
+$font-family-secondary: 'Montserrat Alternates', sans-serif;
+$font-family-body: $font-family-primary;
+$font-family-header: $font-family-primary;
+
+/*
+  Font transforms
+ */
+$font-size-normal: 20px;
+$font-size-large: $font-size-normal * 1.5;
+$font-size-small: $font-size-normal * 0.9;
+$font-line-height-normal: 1.3em;
+$font-line-height-small: 1.17em;
+$font-line-height-large: 1.8em;
+$font-letter-spacing-normal: 0.01em;
+$font-letter-spacing-small: $font-letter-spacing-normal;
+$font-letter-spacing-large: 0.107em;
+$font-letter-spacing-body: $font-letter-spacing-normal;
+$font-size-body: $font-size-normal;
+$font-size-body-small: $font-size-small;
+
+/*
+  Font Weights
+ */
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-thin: $font-weight-normal;
+$font-weight-bold-semi: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+/*
+  Responsive font size vars
+ */
+$font-size-vp-min-num: 450;
+$font-size-vp-max-num: 1440;//1920;
+$font-size-vp-min: $font-size-vp-min-num * 1px;
+$font-size-vp-max: $font-size-vp-max-num * 1px;
